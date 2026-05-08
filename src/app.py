@@ -15,6 +15,3 @@ def hello_world(name: str = None):
 def handle_dices():
     return "look at these beautiful dices"
 
-# @app.route("/motivation")
-# def motivation_txt():
-#     return "Push through now, and you'll thank yourself later."

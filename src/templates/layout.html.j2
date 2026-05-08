@@ -16,7 +16,18 @@
    <div id="content">
    {% block content %} {% endblock %}
    </div>
-   <div id="footer"></div>
+
+
+   <div id="footer">
+   {% block footer %}
+   &copy; Copyright 2026 by &nbsp;
+   {% block author %}
+        {{_author | default("YOU")}}
+   {% endblock %}
+   {% endblock %}
+   </div>
+
+
 
 </body>
 </html>

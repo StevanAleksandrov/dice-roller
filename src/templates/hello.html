@@ -1,6 +1,6 @@
 {% extends "layout.html.j2" %}
 
-{% block title %} Hello-Home {% endblock %}
+{% block title %} Home {% endblock %}
 
 {% block content %}
 <div class="wraper">
@@ -16,7 +16,10 @@
     <h2 class="text_1">Welcome to the Dice Roller</h2>
 <p class="text_2">Use this small Flask app to roll dice and test basic routes and templates.</p>
     {% endif %}
-
 </div>
 
+{% endblock %}
+
+{% block author %}
+  Stevan Aleksandrov
 {% endblock %}
