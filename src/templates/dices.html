@@ -1,0 +1,67 @@
+{% extends "layout.html.j2" %}
+
+{% block title %}Dices{% endblock %}
+
+{% block content %}
+
+<div class="centered-content">
+
+    {% if _dices %}
+        <p>Look at these beautiful dice:</p>
+
+        <ul>
+            {% for dice in _dices %}
+                <li>{{ dice["numberOfSides"] }} sided dice</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No dice available.</p>
+    {% endif %}
+
+    <button id="add-dice-btn" type="button" onclick="showNewDiceForm()">
+        Add new dice
+    </button>
+
+    <form id="add-dice-form" style="display: none; margin-top: 1em;" onsubmit="addNewDice(event)">
+        <label for="sides-input">Enter the number of sides for the new dice:</label>
+        <input type="number" id="sides-input" name="numberOfSides" min="2" required>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script>
+    function showNewDiceForm() {
+        document.getElementById("add-dice-form").style.display = "block";
+        document.getElementById("add-dice-btn").style.display = "none";
+    }
+
+    async function addNewDice(event) {
+        event.preventDefault();
+
+        const sides = document.getElementById("sides-input").value;
+
+        try {
+            const response = await fetch("/api/dices", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    numberOfSides: Number(sides)
+                })
+            });
+
+            if (response.status >= 400) {
+                throw new Error("Something went wrong");
+            }
+
+            location.reload();
+
+        } catch (error) {
+            alert("Could not create dice.");
+        }
+    }
+</script>
+
+{% endblock %}

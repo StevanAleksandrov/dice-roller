@@ -4,8 +4,7 @@
 
 {% block content %}
 <div class="wraper">
-
-<button class="btn" href="./layout.html.j2">Roll dice</button>
+<a class="btn" href="{{ url_for('handle_dices') }}">Roll dice</a>
 <p class="description">Click the button to open the dice roller page.</p>
 </div>
 <div>
