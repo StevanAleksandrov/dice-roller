@@ -1,0 +1,33 @@
+#header {
+    text-align: center;
+    border: 1px solid rgb(107, 105, 101);
+    border-radius: 3px;
+    background: rgba(198, 185, 162, 0.613);
+    margin: 16px auto;
+    color: rgb(137, 55, 55);
+}
+
+
+
+  .btn {
+    display: inline-block;
+    border: 2px solid rgb(214, 143, 143);
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    padding: 8px 14px;
+    margin-top: 15px;
+}
+
+.text_1 {
+    color: rgb(137, 55, 55);
+   text-decoration: overline;
+    
+    margin: auto 5px;
+}
+
+#content {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+}
